@@ -1,0 +1,147 @@
+:root{
+    --bg:#0F1B2D;
+    --panel:#14253C;
+    --text:#E9EDF2;
+    --text-dim:#93A6BC;
+    --accent:#E8A33D;
+    --accent-2:#3FA796;
+    --line:rgba(233,237,242,0.14);
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  html{scroll-behavior:smooth; scroll-padding-top:70px;}
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'IBM Plex Serif', serif;
+    font-weight:600;
+    margin:0 0 .4em;
+    letter-spacing:-.01em;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  a{color:var(--accent-2); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:20;
+    padding-top:env(safe-area-inset-top,0px);
+    background:rgba(15,27,45,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:56px; max-width:760px;
+  }
+  nav .brand{font-family:'IBM Plex Mono'; font-size:14px; color:var(--text);}
+  nav .links{display:flex; gap:22px; font-size:14px; font-family:'IBM Plex Mono';}
+  nav .links a{color:var(--text-dim);}
+  nav .links a:hover{color:var(--accent-2); text-decoration:none;}
+  @media (max-width:560px){ nav .links{gap:14px; font-size:12px;} }
+
+  /* HERO */
+  header.hero{padding:64px 0 40px; border-bottom:1px solid var(--line);}
+  header.hero h1{font-size:clamp(32px,6vw,48px); color:var(--text);}
+  header.hero .role{color:var(--accent); font-size:17px; font-family:'IBM Plex Mono'; margin-bottom:18px;}
+  header.hero p.summary{color:var(--text-dim); max-width:62ch; font-size:15.5px;}
+  .contact-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+  .pill{
+    border:1px solid var(--line); border-radius:999px; padding:6px 14px;
+    font-size:13px; font-family:'IBM Plex Mono'; color:var(--text-dim);
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .pill:hover{border-color:var(--accent-2);}
+
+  /* pipeline svg */
+  .pipeline{margin-top:36px;}
+  .pipeline svg{width:100%; height:auto; display:block;}
+  .pipeline .node{fill:var(--bg-alt); stroke:var(--accent-2); stroke-width:2;}
+  .pipeline .track{stroke:var(--line); stroke-width:2; fill:none;}
+  .pipeline .label{font-family:'IBM Plex Mono'; font-size:11px; fill:var(--text-dim);}
+  .pipeline .packet{fill:var(--accent);}
+
+  @keyframes flow{
+    0%{ offset-distance:0%; opacity:0;}
+    5%{opacity:1;}
+    95%{opacity:1;}
+    100%{ offset-distance:100%; opacity:0;}
+  }
+  .packet{
+    offset-path: path("M20,30 L200,30 L200,30 L380,30 L560,30 L720,30");
+    animation: flow 4.5s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce){ .packet{animation:none; opacity:1; offset-distance:0%;} }
+
+  /* SECTIONS */
+  section{padding:56px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  section h2{font-size:24px; margin-bottom:28px;}
+  section h2 .idx{color:var(--text-dim); font-family:'IBM Plex Mono'; font-size:14px; font-weight:400; margin-right:10px;}
+
+  /* EXPERIENCE — DAG timeline */
+  .timeline{position:relative; padding-left:28px;}
+  .timeline::before{
+    content:""; position:absolute; left:5px; top:6px; bottom:6px; width:2px;
+    background:var(--line);
+  }
+  .job{position:relative; margin-bottom:44px;}
+  .job:last-child{margin-bottom:0;}
+  .job::before{
+    content:""; position:absolute; left:-28px; top:4px; width:12px; height:12px;
+    border-radius:50%; background:var(--bg); border:2px solid var(--accent-2);
+  }
+  .job .company{font-size:19px; color:var(--text);}
+  .job .meta{color:var(--text-dim); font-size:13px; font-family:'IBM Plex Mono'; margin-bottom:12px;}
+  .job ul{margin:0; padding-left:18px; color:var(--text-dim); font-size:14.5px;}
+  .job li{margin-bottom:7px;}
+  .job li::marker{color:var(--accent-2);}
+
+  /* SKILLS */
+  .skill-group{margin-bottom:22px;}
+  .skill-group h3{font-size:14px; font-family:'IBM Plex Mono'; font-weight:500; color:var(--text-dim); margin-bottom:10px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    border:1px solid var(--line); padding:5px 12px; border-radius:6px;
+    font-size:13px; font-family:'IBM Plex Mono'; color:var(--text);
+    background:var(--panel);
+  }
+
+  /* CERTS */
+  .cert-list{list-style:none; margin:0; padding:0;}
+  .cert-list li{
+    display:flex; justify-content:space-between; gap:16px;
+    padding:10px 0; border-bottom:1px dashed var(--line); font-size:14.5px;
+  }
+  .cert-list li:last-child{border-bottom:none;}
+  .cert-list .year{color:var(--accent-2); font-family:'IBM Plex Mono'; font-size:13px; white-space:nowrap;}
+
+  /* EDUCATION */
+  .edu-card{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:22px 24px;}
+  .edu-card .school{font-size:18px; color:var(--text); font-family:'IBM Plex Serif'; margin-bottom:4px;}
+  .edu-card .degree{color:var(--text-dim); font-size:14px; margin-bottom:12px;}
+  .edu-card .thesis{font-size:14px; color:var(--text-dim);}
+
+  /* TWO COL */
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:36px;}
+  @media (max-width:640px){ .two-col{grid-template-columns:1fr;} }
+  .two-col h3{font-size:14px; font-family:'IBM Plex Mono'; font-weight:500; color:var(--text-dim); margin-bottom:14px;}
+  .two-col ul{list-style:none; margin:0; padding:0; font-size:14px; color:var(--text-dim);}
+  .two-col li{padding:8px 0; border-bottom:1px dashed var(--line);}
+  .two-col li:last-child{border-bottom:none;}
+  .two-col .y{color:var(--accent); font-family:'IBM Plex Mono'; font-size:12.5px; margin-left:6px;}
+
+  footer{padding:48px 0 64px; text-align:left;}
+  footer .wrap{color:var(--text-dim); font-size:13.5px;}
+  footer .name{color:var(--text); font-family:'IBM Plex Serif'; font-size:18px; margin-bottom:8px;}
+
+  ::selection{background:var(--accent); color:var(--bg);}

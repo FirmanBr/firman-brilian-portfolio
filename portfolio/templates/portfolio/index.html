@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ profile.name }} — {{ profile.role }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">firman.brilian</div>
+    <div class="links">
+      <a href="#experience">experience</a>
+      <a href="#skills">skills</a>
+      <a href="#certifications">certs</a>
+      <a href="#education">education</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>{{ profile.name }}</h1>
+    <div class="role">{{ profile.role }}</div>
+    <p class="summary">{{ profile.summary }}</p>
+    <div class="contact-row">
+      <span class="pill">{{ profile.location }}</span>
+      <a class="pill" href="tel:{{ profile.phone }}">{{ profile.phone }}</a>
+      <a class="pill" href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+      <a class="pill" href="{{ profile.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="pill" href="{{ profile.medium }}" target="_blank" rel="noopener">Medium</a>
+    </div>
+
+    <div class="pipeline" aria-hidden="true">
+      <svg viewBox="0 0 740 60">
+        <path class="track" d="M20,30 L720,30"></path>
+        <circle class="node" cx="20" cy="30" r="7"></circle>
+        <circle class="node" cx="200" cy="30" r="7"></circle>
+        <circle class="node" cx="380" cy="30" r="7"></circle>
+        <circle class="node" cx="560" cy="30" r="7"></circle>
+        <circle class="node" cx="720" cy="30" r="7"></circle>
+        <text class="label" x="10" y="52">extract</text>
+        <text class="label" x="178" y="52">transform</text>
+        <text class="label" x="362" y="52">stream</text>
+        <text class="label" x="548" y="52">govern</text>
+        <text class="label" x="690" y="52">serve</text>
+        <circle class="packet" r="4"></circle>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <h2><span class="idx">01</span>Experience</h2>
+    <div class="timeline">
+      {% for job in experience %}
+      <div class="job">
+        <div class="company">{{ job.company }}</div>
+        <div class="meta">{{ job.role }} · {{ job.period }}</div>
+        <ul>
+          {% for bullet in job.bullets %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2><span class="idx">02</span>Skills &amp; Tools</h2>
+    {% for group in skills %}
+    <div class="skill-group">
+      <h3>{{ group.group }}</h3>
+      <div class="chips">
+        {% for item in group.items %}
+        <span class="chip">{{ item }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <h2><span class="idx">03</span>Certifications</h2>
+    <ul class="cert-list">
+      {% for name, year in certifications %}
+      <li><span>{{ name }}</span><span class="year">{{ year }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2><span class="idx">04</span>Education</h2>
+    <div class="edu-card">
+      <div class="school">{{ education.school }}</div>
+      <div class="degree">{{ education.degree }}</div>
+      <div class="thesis">{{ education.thesis }}</div>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="wrap">
+    <h2><span class="idx">05</span>Mentoring &amp; Speaking</h2>
+    <div class="two-col">
+      <div>
+        <h3>Mentoring</h3>
+        <ul>
+          {% for name, year in mentoring %}
+          <li>{{ name }} <span class="y">{{ year }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3>Speaking</h3>
+        <ul>
+          {% for name, year in speaking %}
+          <li>{{ name }} <span class="y">{{ year }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="name">{{ profile.name }}</div>
+    <div>
+      {{ profile.location }} ·
+      <a href="mailto:{{ profile.email }}">{{ profile.email }}</a> ·
+      <a href="{{ profile.linkedin }}" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="{{ profile.medium }}" target="_blank" rel="noopener">Medium</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

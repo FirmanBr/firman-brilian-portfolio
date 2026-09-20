@@ -1,3 +1,12 @@
+SERVICES = [
+    ("Arsitektur & platform data", "Merancang arsitektur data enterprise (relasional, NoSQL, data lake) yang skalabel dan siap untuk analitik jangka panjang."),
+    ("Pipeline ETL/ELT", "Membangun dan mengoptimalkan pipeline data dengan Airflow, dbt, Talend, atau NiFi — dari sumber mentah hingga siap pakai."),
+    ("Sistem data real-time", "Implementasi arsitektur event-driven dengan Kafka dan Spark Streaming untuk kebutuhan analitik near real-time."),
+    ("Migrasi & modernisasi cloud", "Migrasi sistem on-premise ke Azure, AWS, atau GCP dengan downtime minimal dan biaya operasional yang terukur."),
+    ("Tata kelola & kualitas data", "Membangun framework data governance dan data quality untuk kebutuhan kepatuhan dan keandalan pelaporan."),
+    ("Mentoring tim data", "Pendampingan teknis untuk tim data engineering — dari code review, arsitektur, hingga praktik kerja Agile."),
+]
+
 PROFILE = {
     "name": "Firman Brilian",
     "role": "Senior Data Engineer & Data Architect",

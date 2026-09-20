@@ -1,25 +1,26 @@
 SERVICES = [
-    ("Arsitektur & platform data", "Merancang arsitektur data enterprise (relasional, NoSQL, data lake) yang skalabel dan siap untuk analitik jangka panjang."),
-    ("Pipeline ETL/ELT", "Membangun dan mengoptimalkan pipeline data dengan Airflow, dbt, Talend, atau NiFi — dari sumber mentah hingga siap pakai."),
-    ("Sistem data real-time", "Implementasi arsitektur event-driven dengan Kafka dan Spark Streaming untuk kebutuhan analitik near real-time."),
-    ("Migrasi & modernisasi cloud", "Migrasi sistem on-premise ke Azure, AWS, atau GCP dengan downtime minimal dan biaya operasional yang terukur."),
-    ("Tata kelola & kualitas data", "Membangun framework data governance dan data quality untuk kebutuhan kepatuhan dan keandalan pelaporan."),
-    ("Mentoring tim data", "Pendampingan teknis untuk tim data engineering — dari code review, arsitektur, hingga praktik kerja Agile."),
+    ("Data architecture & platforms", "Designing enterprise data architectures — relational, NoSQL, and data lake — built to scale and stay analytics-ready long term."),
+    ("ETL/ELT pipelines", "Building and optimizing data pipelines with Airflow, dbt, Talend, or NiFi — from raw sources to analytics-ready datasets."),
+    ("Real-time data systems", "Implementing event-driven architecture with Kafka and Spark Streaming for near real-time analytics use cases."),
+    ("Cloud migration & modernization", "Migrating on-premise systems to Azure, AWS, or GCP with minimal downtime and predictable operational cost."),
+    ("Data governance & quality", "Building data governance and data quality frameworks for compliance and reliable enterprise reporting."),
+    ("Data team mentoring", "Hands-on technical mentoring for data engineering teams — code reviews, architecture guidance, and Agile practices."),
 ]
 
 PROFILE = {
     "name": "Firman Brilian",
     "role": "Senior Data Engineer & Data Architect",
     "location": "Bandung, Indonesia",
-    "phone": "+628986127214",
+    "phone": "+6287821731259",
+    "whatsapp": "6287821731259",
     "email": "firmanbriliancareer@gmail.com",
     "linkedin": "https://www.linkedin.com/in/firmanbrilian/",
     "medium": "https://medium.com/@firmanbrilian",
     "summary": (
-        "12+ tahun merancang dan mengoptimalkan arsitektur data enterprise di sektor perbankan, "
-        "jasa keuangan, telekomunikasi, dan farmasi. Fokus pada pipeline ETL/ELT yang andal, "
-        "arsitektur real-time berbasis event, dan tata kelola data yang membuat sistem enterprise "
-        "siap untuk analitik."
+        "12+ years designing and optimizing enterprise-scale data architectures across banking, "
+        "financial services, telecommunications, and pharmaceutical industries. Focused on reliable "
+        "ETL/ELT pipelines, event-driven real-time architectures, and data governance that makes "
+        "enterprise systems analytics-ready."
     ),
 }
 
@@ -27,62 +28,62 @@ EXPERIENCE = [
     {
         "company": "Id/x Partners — Jakarta",
         "role": "Data Architect",
-        "period": "Januari 2024 – sekarang",
+        "period": "January 2024 – Present",
         "bullets": [
-            "Merestrukturisasi 11 database mission-critical di Bank Negara Indonesia (BNI) menggunakan PostgreSQL, Oracle, dan dbt untuk meningkatkan skalabilitas dan kesiapan analitik.",
-            "Merancang arsitektur data real-time berbasis Couchbase (NoSQL) untuk OJK guna mempercepat proses pelaporan regulasi.",
-            "Membangun pipeline ETL/ELT skala enterprise dengan Apache Airflow, Talend, dan Python.",
-            "Mengimplementasikan arsitektur event-driven dengan Apache Kafka dan Spark Streaming untuk analitik near real-time.",
-            "Memimpin implementasi framework Enterprise Data Governance di Biofarma dan Data Quality framework di Telkom.",
-            "Merancang pipeline CI/CD untuk data engineering menggunakan Docker, Kubernetes, dan Airflow; mengurangi downtime manual hingga 40%.",
+            "Restructured 11 mission-critical databases at Bank Negara Indonesia (BNI) using PostgreSQL, Oracle, and dbt to improve scalability, governance alignment, and analytics readiness.",
+            "Designed real-time data architecture with Couchbase (NoSQL) for Otoritas Jasa Keuangan (OJK), accelerating regulatory reporting processes.",
+            "Built and managed scalable ETL/ELT pipelines using Apache Airflow, Talend, and Python.",
+            "Implemented event-driven architecture with Apache Kafka and Spark Streaming, enabling near real-time analytics.",
+            "Led implementation of an Enterprise Data Governance framework at Biofarma and a Data Quality framework at Telkom.",
+            "Designed CI/CD pipelines for data engineering workflows with Docker, Kubernetes, and Airflow, cutting manual downtime by 40%.",
         ],
     },
     {
         "company": "Xtremax Pte. Ltd — Singapore",
         "role": "Tech Lead Data Engineer & Analyst",
-        "period": "September 2022 – Desember 2023",
+        "period": "September 2022 – December 2023",
         "bullets": [
-            "Memimpin migrasi cloud end-to-end dari SQL Server on-premise ke Microsoft Azure (ADF, Snowflake, ADLS).",
-            "Mengoptimalkan pipeline ETL/ELT, memangkas waktu proses 20–30% melalui tuning performa dan query.",
-            "Membangun konektivitas data aman dengan Azure Key Vault, Managed Identity, dan RBAC.",
-            "Membangun Data Governance dengan Azure Purview dan kontrol ISO 27001.",
-            "Mengembangkan solusi OCR berbasis Google Cloud Document AI untuk digitalisasi sertifikat pemerintah.",
-            "Memimpin dan mementor tim Data Engineering (Agile/Scrum), serta berkontribusi pada pre-sales dan estimasi TCO.",
+            "Led end-to-end cloud migration from on-premise SQL Server to Microsoft Azure (ADF, Snowflake, ADLS).",
+            "Optimized ETL/ELT pipelines, cutting processing time by 20–30% through performance and query tuning.",
+            "Implemented secure multi-source data connectivity using Azure Key Vault, Managed Identity, and RBAC.",
+            "Established data governance with Azure Purview and ISO 27001 controls.",
+            "Developed OCR-based data extraction using Google Cloud Document AI for government digital transformation programs.",
+            "Led and mentored a data engineering team (Agile/Scrum) and contributed to pre-sales solution architecture and TCO estimation.",
         ],
     },
     {
         "company": "PT Adira Finance — Jakarta",
         "role": "Assistant Manager, Data Engineer & Analyst",
-        "period": "Maret 2021 – Agustus 2022",
+        "period": "March 2021 – August 2022",
         "bullets": [
-            "Membangun pipeline ETL/ELT dengan Airflow, NiFi, dan Spark; mengurangi latensi data 40%.",
-            "Memimpin migrasi data warehouse dari SQL Server & Teradata ke MapRDB (HBase), meningkatkan performa query 60%.",
-            "Membangun model machine learning (XGBoost, Random Forest) untuk credit scoring, menurunkan tingkat gagal bayar.",
-            "Meningkatkan konversi marketing 25% melalui segmentasi pelanggan berbasis data.",
-            "Menerapkan tata kelola data dengan Apache Atlas untuk data lineage dan golden record.",
+            "Built ETL/ELT pipelines with Airflow, NiFi, and Spark, reducing data latency by 40%.",
+            "Led data warehouse migration from SQL Server & Teradata to MapRDB (HBase), improving query performance by 60%.",
+            "Built machine learning models (XGBoost, Random Forest) for credit risk scoring, reducing loan default rates.",
+            "Increased marketing conversion by 25% through data-driven customer segmentation.",
+            "Implemented data governance with Apache Atlas for data lineage and golden-record standards.",
         ],
     },
     {
         "company": "PT Indonesia Comnets Plus (ICON+) — Jakarta",
         "role": "Senior Data Analyst & Engineer",
-        "period": "Februari 2020 – Maret 2021",
+        "period": "February 2020 – March 2021",
         "bullets": [
-            "Membangun infrastruktur Big Data (Hadoop, Spark) untuk pemrosesan data terdistribusi skala enterprise.",
-            "Mengembangkan solusi ML/NLP (spaCy, TensorFlow, Prophet) untuk sentiment analysis dan forecasting, dideploy di AWS SageMaker & GCP Vertex AI.",
-            "Melakukan analitik geospasial (PostGIS, GeoPandas, ArcGIS) untuk optimasi rute fiber optik.",
-            "Membangun chatbot berbasis AI dengan Dialogflow & Firebase serta sistem monitoring IoT untuk smart farming.",
+            "Built Big Data infrastructure (Hadoop, Spark) for distributed, enterprise-scale data processing.",
+            "Developed ML/NLP solutions (spaCy, TensorFlow, Prophet) for sentiment analysis and forecasting, deployed on AWS SageMaker & GCP Vertex AI.",
+            "Performed geospatial analytics (PostGIS, GeoPandas, ArcGIS) to optimize fiber-optic routing.",
+            "Built an AI-powered chatbot with Dialogflow & Firebase and IoT monitoring systems for smart farming.",
         ],
     },
     {
         "company": "PT Len (Persero) — Bandung",
         "role": "Data Engineer & Analyst",
-        "period": "November 2014 – Februari 2020",
+        "period": "November 2014 – February 2020",
         "bullets": [
-            "Memimpin inisiatif predictive maintenance berbasis IoT dan machine learning untuk meminimalkan downtime.",
-            "Merancang data lake terdistribusi (AWS S3, Hadoop) dan pipeline streaming (Kafka, Spark), meningkatkan ketersediaan data 30%.",
-            "Menerapkan validasi kualitas data dengan Great Expectations, meningkatkan reliabilitas data 25%.",
-            "Mengembangkan REST API aman dengan FastAPI & OAuth2, serta men-deploy model ML dengan Docker/Kubernetes.",
-            "Membangun dashboard real-time (Power BI, Grafana) untuk monitoring KPI dan anomaly detection.",
+            "Led predictive maintenance initiatives using IoT sensor data and machine learning to minimize downtime.",
+            "Designed a distributed data lake (AWS S3, Hadoop) and streaming pipelines (Kafka, Spark), increasing data availability by 30%.",
+            "Implemented data quality validation with Great Expectations, improving data reliability by 25%.",
+            "Built secure REST APIs with FastAPI & OAuth2 and deployed ML models with Docker/Kubernetes.",
+            "Built real-time dashboards (Power BI, Grafana) for KPI monitoring and anomaly detection.",
         ],
     },
 ]
@@ -106,7 +107,7 @@ SKILLS = [
     },
     {
         "group": "Governance, quality & security",
-        "items": ["Data Governance frameworks", "Apache Atlas", "Great Expectations", "ISO 27001", "IAM & RBAC"],
+        "items": ["Data governance frameworks", "Apache Atlas", "Great Expectations", "ISO 27001", "IAM & RBAC"],
     },
     {
         "group": "ML, analytics & visualization",
@@ -136,27 +137,26 @@ EDUCATION = {
     "school": "UIN Sunan Gunung Djati, Bandung",
     "degree": "Bachelor of Informatics Engineering · GPA 3.42 · 2009 – 2013",
     "thesis": (
-        "Skripsi: sistem pengenalan wajah menggunakan Linear Discriminant Analysis (LDA) untuk "
-        "meningkatkan akurasi klasifikasi citra — meraih Best Paper di National Journal of Makassar "
-        "(ISSN 2355-1941)."
+        "Thesis: a face recognition system using Linear Discriminant Analysis (LDA) to improve image "
+        "classification accuracy — awarded Best Paper at the National Journal of Makassar (ISSN 2355-1941)."
     ),
 }
 
 MENTORING = [
-    ("Mentor Data Analyst & AI, Biji Biji Initiative", "2025"),
+    ("Mentor, Data Analyst & AI, Biji Biji Initiative", "2025"),
     ("Data Analytics Mentor, Bitlabs Academy", "2024"),
     ("Capstone Advisor, Bangkit Google Batch 2024", "2024"),
-    ("Mentor Data Analyst & AI, Skilvul Batch 1 & 2", "2024"),
-    ("Mentor Capstone, Yayasan Anak Bangsa Bisa", "2023"),
+    ("Mentor, Data Analyst & AI, Skilvul Batch 1 & 2", "2024"),
+    ("Capstone Mentor, Yayasan Anak Bangsa Bisa", "2023"),
     ("Capstone Advisor, Bangkit Google Batch 2023", "2023"),
     ("Academy Facilitator — Business Intelligence, Binar Academy", "2022"),
-    ("Mentor Capstone, Yayasan Anak Bangsa Bisa", "2022"),
+    ("Capstone Mentor, Yayasan Anak Bangsa Bisa", "2022"),
     ("Talent Expert, Pijar Mahir", "2022"),
 ]
 
-SPEAKING = [
+SPEAKER = [
     ("Buka Metup, Bukalapak", "2023"),
-    ("Google Cloud Devfest", "2023"),
+    ("Google Cloud DevFest", "2023"),
     ("PHP Indonesia Community", "2021"),
     ("Predictive Maintenance, Indonesia AI Society", "2021"),
     ("Edukasi 4.0, Pemuda Digital Kreatif", "2020"),

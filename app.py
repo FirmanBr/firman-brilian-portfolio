@@ -1,5 +1,5 @@
 import streamlit as st
-from data import PROFILE, SERVICES, EXPERIENCE, SKILLS, CERTIFICATIONS, EDUCATION, MENTORING, SPEAKING
+from data import PROFILE, SERVICES, EXPERIENCE, SKILLS, CERTIFICATIONS, EDUCATION, MENTORING, SPEAKER
 
 st.set_page_config(
     page_title=f"{PROFILE['name']} — {PROFILE['role']}",
@@ -64,6 +64,12 @@ st.markdown(
         font-weight: 600; padding: 10px 20px; border-radius: 8px;
         text-decoration: none !important; margin: 4px 6px 4px 0;
     }
+    .whatsapp-btn {
+        display: inline-block;
+        background: #25D366; color: #06210f !important;
+        font-weight: 600; padding: 10px 20px; border-radius: 8px;
+        text-decoration: none !important; margin: 4px 6px 4px 0;
+    }
     .ghost-btn {
         display: inline-block;
         background: transparent; color: #E9EDF2 !important;
@@ -76,28 +82,48 @@ st.markdown(
         border-radius: 10px; padding: 16px 18px; margin-bottom: 12px;
     }
     .service-card b { color: #E9EDF2; }
+    .badge {
+        display:inline-flex; align-items:center; gap:7px;
+        border:1px solid rgba(63,167,150,0.35); background:rgba(63,167,150,0.08);
+        color:#3FA796; font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+        padding:5px 12px; border-radius:999px; margin-bottom:14px;
+    }
+    .skill-card {
+        border-radius: 12px; padding: 18px 18px 14px; margin-bottom: 14px;
+        background: #14253C; border: 1px solid rgba(233,237,242,0.14);
+    }
+    .skill-card .icon-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+    .skill-card .icon {
+        width:32px; height:32px; border-radius:8px; display:flex; align-items:center;
+        justify-content:center; font-size:15px; background:rgba(255,255,255,0.05);
+    }
+    .skill-card .title { font-weight:600; color:#E9EDF2; font-size:14.5px; }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
+SKILL_ICONS = ["🗄️", "🔀", "📡", "☁️", "🛡️", "📊"]
+
 # ---------- HERO ----------
+st.markdown("<div class='badge'>● Available for freelance &amp; consulting projects</div>", unsafe_allow_html=True)
 st.title(PROFILE["name"])
 st.markdown(f"<div class='role-tag'>{PROFILE['role']}</div>", unsafe_allow_html=True)
 st.markdown(f"<p class='summary'>{PROFILE['summary']}</p>", unsafe_allow_html=True)
 
 c1, c2, c3, c4, c5 = st.columns(5)
 c1.markdown(f"📍 {PROFILE['location']}")
-c2.markdown(f"📞 [{PROFILE['phone']}](tel:{PROFILE['phone']})")
+c2.markdown(f"💬 [WhatsApp](https://wa.me/{PROFILE['whatsapp']})")
 c3.markdown(f"✉️ [Email](mailto:{PROFILE['email']})")
 c4.markdown(f"💼 [LinkedIn]({PROFILE['linkedin']})")
 c5.markdown(f"✍️ [Medium]({PROFILE['medium']})")
 
+wa_text = "Hi%20Firman%2C%20I%27d%20like%20to%20discuss%20a%20data%20project."
 st.markdown(
     f"""
     <div style="margin-top:18px;">
-        <a class="cta-btn" href="mailto:{PROFILE['email']}?subject=Diskusi%20Proyek%20Data">Diskusikan proyek Anda</a>
-        <a class="ghost-btn" href="#layanan">Lihat layanan</a>
+        <a class="whatsapp-btn" href="https://wa.me/{PROFILE['whatsapp']}?text={wa_text}" target="_blank">Chat on WhatsApp</a>
+        <a class="ghost-btn" href="#services">View services</a>
     </div>
     """,
     unsafe_allow_html=True,
@@ -106,10 +132,10 @@ st.markdown(
 st.divider()
 
 # ---------- SERVICES ----------
-st.header("Layanan", anchor="layanan")
+st.header("Services", anchor="services")
 st.markdown(
-    "<p class='summary'>Membantu perusahaan membangun fondasi data yang andal — dari arsitektur, "
-    "pipeline, hingga tata kelola.</p>",
+    "<p class='summary'>Helping companies build a reliable data foundation — from architecture, "
+    "pipelines, to governance.</p>",
     unsafe_allow_html=True,
 )
 col_a, col_b = st.columns(2)
@@ -133,11 +159,27 @@ st.divider()
 
 # ---------- SKILLS ----------
 st.header("Skills & Tools")
-for group in SKILLS:
-    st.markdown(f"**{group['group']}**")
+st.markdown(
+    "<p class='summary'>The stack behind every architecture, pipeline, and platform listed above.</p>",
+    unsafe_allow_html=True,
+)
+sk_col1, sk_col2 = st.columns(2)
+for i, group in enumerate(SKILLS):
+    target = sk_col1 if i % 2 == 0 else sk_col2
+    icon = SKILL_ICONS[i % len(SKILL_ICONS)]
     chips_html = "".join(f"<span class='chip'>{item}</span>" for item in group["items"])
-    st.markdown(chips_html, unsafe_allow_html=True)
-    st.write("")
+    target.markdown(
+        f"""
+        <div class="skill-card">
+            <div class="icon-row">
+                <div class="icon">{icon}</div>
+                <span class="title">{group['group']}</span>
+            </div>
+            <div>{chips_html}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 st.divider()
 
@@ -159,31 +201,32 @@ st.markdown(EDUCATION["thesis"])
 
 st.divider()
 
-# ---------- MENTORING & SPEAKING ----------
-st.header("Mentoring & Speaking")
+# ---------- MENTORING & SPEAKER ----------
+st.header("Mentoring & Speaker")
 col1, col2 = st.columns(2)
 with col1:
     st.subheader("Mentoring")
     for name, year in MENTORING:
         st.markdown(f"- {name} · *{year}*")
 with col2:
-    st.subheader("Speaking")
-    for name, year in SPEAKING:
+    st.subheader("Speaker")
+    for name, year in SPEAKER:
         st.markdown(f"- {name} · *{year}*")
 
 st.divider()
 
 # ---------- CONTACT CTA ----------
-st.header("Punya proyek data yang perlu dibereskan?")
+st.header("Have a data project that needs sorting out?")
 st.markdown(
-    "<p class='summary'>Baik untuk membangun arsitektur baru, memperbaiki pipeline yang bermasalah, "
-    "atau menata ulang tata kelola data perusahaan — saya terbuka untuk diskusi kebutuhan Anda.</p>",
+    "<p class='summary'>Whether it's building a new architecture, fixing a broken pipeline, "
+    "or restructuring your company's data governance — I'm open to discussing your needs.</p>",
     unsafe_allow_html=True,
 )
 st.markdown(
     f"""
-    <a class="cta-btn" href="mailto:{PROFILE['email']}?subject=Diskusi%20Proyek%20Data">Kirim email</a>
-    <a class="ghost-btn" href="{PROFILE['linkedin']}" target="_blank">Hubungi via LinkedIn</a>
+    <a class="whatsapp-btn" href="https://wa.me/{PROFILE['whatsapp']}?text={wa_text}" target="_blank">Chat on WhatsApp</a>
+    <a class="cta-btn" href="mailto:{PROFILE['email']}?subject=Data%20Project%20Inquiry">Send an email</a>
+    <a class="ghost-btn" href="{PROFILE['linkedin']}" target="_blank">Message on LinkedIn</a>
     """,
     unsafe_allow_html=True,
 )

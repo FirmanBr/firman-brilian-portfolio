@@ -78,3 +78,4 @@ Beberapa opsi termudah:
 Semua styling ada di satu file: `portfolio/static/portfolio/css/style.css`.
 Warna, font, dan layout diatur lewat CSS variables di bagian `:root` paling atas file.
 # firman-brilian-portfolio
+# firman-brilian-portfolio
